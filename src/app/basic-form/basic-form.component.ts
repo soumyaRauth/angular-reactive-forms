@@ -14,11 +14,11 @@ export class BasicFormComponent implements OnInit {
   ngOnInit(): void {
 
     this.myForm=this.fb.group({
-      email:'',
+      email:'email',
       message:'Test Message'
     })
 
-    this.myForm.valueChanges.subscribe(console.log)
+    // this.myForm.valueChanges.subscribe(console.log)
   }
 
 }
