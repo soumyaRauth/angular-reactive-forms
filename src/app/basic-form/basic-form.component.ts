@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder,FormGroup } from '@angular/forms';
+import {FormBuilder, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-basic-form',
@@ -8,17 +8,24 @@ import { FormBuilder,FormGroup } from '@angular/forms';
 })
 export class BasicFormComponent implements OnInit {
 
-  myForm:FormGroup;
+  myFormGroup:FormGroup;
+  
   constructor(private fb:FormBuilder) { }
 
   ngOnInit(): void {
+  const phone=this.fb.group({
+    area:[],
+    prefix:[],
+    line:[]
+  })
 
-    this.myForm=this.fb.group({
-      email:'email',
-      message:'Test Message'
-    })
+  this.myFormGroup=this.fb.group({
+    email:[],
+    homePhone:phone,
+    officePhone:phone,
 
-    // this.myForm.valueChanges.subscribe(console.log)
+  })
+
   }
 
 }
